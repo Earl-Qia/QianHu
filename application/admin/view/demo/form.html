@@ -1,0 +1,138 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit" ng-app="hd" ng-controller="ctrl">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>{$title}</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane">
+       <!--  <div class="layui-form-item">
+           <label class="layui-form-label">图片所属</label>
+           <div class="layui-input-4">
+               <select name="type_id" lay-verify="required" ng-model="selected" ng-options="v.type_id as v.name for v in group track by v.type_id">
+                   <option value="">请选择图片所属</option>
+               </select>
+           </div>
+       </div> -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">主标题</label>
+            <div class="layui-input-4">
+                <input type="text" name="mtitle" ng-model="field.mtitle" lay-verify="required" placeholder="{:lang('pleaseEnter')}主标题" class="layui-input">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">副标题</label>
+            <div class="layui-input-4">
+                <input type="text" name="atitle" ng-model="field.atitle" lay-verify="required" placeholder="{:lang('pleaseEnter')}副标题" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">LOGO图片</label>
+            <input type="hidden" name="logo" id="logo" value="{{field.logo}}">
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-primary" id="adBtn"><i class="icon icon-upload3"></i>点击上传</button>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="demologo">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">跳转链接</label>
+            <div class="layui-input-4">
+                <input type="text" name="url" ng-model="field.url" lay-verify="url" placeholder="{:lang('pleaseEnter')}跳转链接URL" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">人数参与</label>
+            <div class="layui-input-4">
+                <input type="text" name="sumone" ng-model="field.sumone" lay-verify="required" placeholder="{:lang('pleaseEnter')}添加人数参与" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否上架</label>
+            <div class="layui-input-block">
+                <input type="radio" name="state" ng-model="field.state" ng-checked="field.state==1" ng-value="1" title="{:lang('open')}">
+                <input type="radio" name="state" ng-model="field.state" ng-checked="field.state==0" ng-value="0" title="{:lang('close')}">
+            </div>
+        </div>
+      <!--   <div class="layui-form-item">
+          <label class="layui-form-label">{:lang('order')}</label>
+          <div class="layui-input-4">
+              <input type="text" name="sort" ng-model="field.sort" value="" placeholder="从小到大排序" class="layui-input">
+          </div>
+      </div> -->
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-block">
+                <textarea ng-model="field.content" placeholder="请输广告内容" name="content" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                <a href="{:url('index')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script src="/static/common/js/angular.min.js"></script>
+<script>
+    var m = angular.module('hd',[]);
+    m.controller('ctrl',['$scope',function($scope) {
+        $scope.field = '{$info}'!='null'?{$info}:{demoid:'',mtitle:'',atitle:'',logo:'',url:'',sumone:'',state:1,content:''};
+        layui.use(['form', 'layer','upload'], function () {
+            var form = layui.form, $ = layui.jquery, upload = layui.upload;
+            if($scope.field.logo){
+                demologo.src = $scope.field.logo;
+            }
+            form.on('submit(submit)', function (data) {
+                // 提交到方法 默认为本身
+                data.field.mtitle = $scope.field.mtitle;
+                var loading = layer.load(1, {shade: [0.1, '#fff']});
+                $.post("", data.field, function (res) {
+                    layer.close(loading);
+                    if (res.code > 0) {
+                        layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                            location.href = res.url;
+                        });
+                    } else {
+                        layer.msg(res.msg, {time: 1800, icon: 2});
+                    }
+                });
+            });
+            //普通图片上传
+            var uploadInst = upload.render({
+                elem: '#adBtn'
+                ,url: '{:url("UpFiles/upload")}'
+                ,before: function(obj){
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function(index, file, result){
+                        $('#demologo').attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res){
+                    if(res.code>0){
+                        $('#logo').val(res.url);
+                    }else{
+                        //如果上传失败
+                        return layer.msg('上传失败');
+                    }
+                }
+                ,error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+        });
+    }]);
+</script>

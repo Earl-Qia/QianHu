@@ -1,0 +1,193 @@
+{include file="common/head"/}
+<link rel="stylesheet" href="/static/plugins/spectrum/spectrum.css">
+<style>
+    .edui-editor{z-index: 1!important;}
+</style>
+<script>
+    var ADMIN = '/static/admin';
+    var UPURL = "{:url('UpFiles/upImages')}";
+    var PUBLIC = "__PUBLIC__";
+    var imgClassName,fileClassName;
+</script>
+{include file="common/foot"/}
+<script src="/static/common/js/jquery.2.1.1.min.js"></script>
+<script>
+    var edittext=new Array();
+</script>
+{js href='/static/kindeditor/NKeditor-all-min.js' /}
+{js href='/static/kindeditor/libs/JDialog/JDialog.min.js' /}
+<link rel="stylesheet" href="/static/wangEditor/css/wangEditor.min.css">
+<script type="text/javascript" src="/static/wangEditor/js/wangEditor.min.js"></script>
+
+<script src="/static/ueditor/ueditor.config.js" type="text/javascript"></script>
+<script src="/static/ueditor/ueditor.all.min.js" type="text/javascript"></script>
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>{$title}</legend>
+    </fieldset>
+    <form class="layui-form" method="post">
+         <input TYPE="hidden" name="id" value="{$info['id']}">
+         <div class="layui-form-item">
+            <label class="layui-form-label">栏目</label>
+            <div class="layui-input-4" id="box_catid">
+               <select  id="catid" lay-verify="required" name="catid"  validate=" minlength:1, maxlength:6, required:true"  title="必须选择一个栏目"><option value="">请选择栏目</option>
+                {$cat_tree}
+                </select>                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-4" id="box_title">
+                <input type="text" name="title" data-required="1" value="{$info['title']}" data-min="1" data-max="80" data-errormsg="标题必须为1-80个字符" title="标题" placeholder="请输入标题" lay-verify="defaul" class="title layui-input"/> 
+            </div>
+            <div class="layui-form-mid layui-word-aux red">*必填</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题颜色</label>
+            <div class="layui-input-4"><input type="text" name="style_color" id="style_color" value="{$info['title_style']}"/></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">加粗</label>
+            <div class="layui-input-4">
+               <input type="checkbox" name="style_bold" value="bold" {eq name="$info['title_bold']" value="bold" }checked{/eq} title="加粗">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">缩略图</label>
+            <div class="layui-input-4">
+                <input type="hidden" name="thumb" id="thumb" value="">
+                <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-primary" id="thumbBtn"><i class="icon icon-upload3"></i>点击上传</button>
+                <button type="button" id="clearThumb" class="layui-btn">取消</button>
+                    <div class="layui-upload-list">
+                    <img class="layui-upload-img" id="cltThumb" src="{$info['thumb']}">
+                    <p id="thumbText"></p>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">关键词</label>
+            <div class="layui-input-4" id="box_keywords">
+                <input type="text" data-required="0" min="0" max="80" errormsg="" title="关键词" placeholder="请输入关键词" lay-verify="defaul|" class=" layui-input" name="keywords" value="{$info['keywords']}" />                     
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">SEO简介</label>
+            <div class="layui-input-4" id="box_description">
+                <textarea data-required="0" min="0" max="0" errormsg="" title="SEO简介" placeholder="请输入SEO简介" lay-verify="defaul|"  class=" layui-textarea" name="description" />{$info['description']}</textarea>                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标签</label>
+            <div class="layui-input-4" id="box_tags">
+                <input type="text" data-required="1" min="0" max="0" errormsg="" title="标签" placeholder="请输入标签" lay-verify="defaul" class="tags layui-input" name="tags" value="{$info['tags']}" /> 
+            </div>
+            <div class="layui-form-mid layui-word-aux red">*必填</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-4" id="box_content">
+                <input type="hidden" id="editType" value="1">
+                <textarea name="content" class="content" id="content">{$info['content']}</textarea>
+                <script>var editor = new UE.ui.Editor();editor.render("content");</script>                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">发布时间</label>
+            <div class="layui-input-4" id="box_createtime">
+                <input type="datetime" title="发布时间" name="createtime" data-required="1" placeholder="请输入发布时间" value="{:date('Y-m-d H:i:s',$info['createtime'])}" class="createtime layui-input" id="createtime">
+            </div>
+            <div class="layui-form-mid layui-word-aux red">*必填
+                <script>
+                layui.use("laydate", function () {
+                    var laydate = layui.laydate;
+                    laydate.render({
+                        elem: "#createtime",
+                        type:"datetime",
+                        format:"yyyy-MM-dd HH:mm:ss"
+                    });
+                })
+                </script>                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-4" id="box_status">
+                <input name="status" id="status_1" {eq name="$info['status']" value="1" }checked{/eq} value="1" type="radio" class="ace" title="发布" />
+                <input name="status" id="status_2" {eq name="$info['status']" value="2" }checked{/eq} value="2" type="radio" class="ace" title="定时发布" />                    
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">来源</label>
+            <div class="layui-input-4" id="box_copyfrom">
+                <input type="text" data-required="0" min="0" max="0" errormsg="" title="来源" placeholder="请输入来源" lay-verify="defaul" class="copyfrom layui-input" name="copyfrom" value="{$info['copyfrom']}" />                     
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">来源网址</label>
+            <div class="layui-input-4" id="box_fromlink">
+                <input type="text" data-required="0" min="0" max="0" errormsg="" title="来源网址" placeholder="请输入来源网址" lay-verify="defaul" class="fromlink layui-input" name="fromlink" value="{$info['fromlink']}" />                     
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">点击次数</label>
+            <div class="layui-input-4" id="box_hits">
+                <input type="text"   class="input-text  layui-input" name="hits"  id="hits" value="{$info['hits']}" size="10"  validate=" maxlength:8" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">提交</button>
+                <a href="/admin/article/index/catid/5.html" class="layui-btn layui-btn-primary">返回</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script src='/static/plugins/spectrum/spectrum.js'></script>
+<script src='/static/admin/js/edit.js'></script>
+<script src='/static/common/js/layui-mz-min.js'></script>
+<script>
+    var thumb,pic,file;
+    var url= "{:url('update')}";
+    layui.use(['form','upload','layedit','laydate','jquery'], function () {
+		
+        var form = layui.form,upload = layui.upload,layedit = layui.layedit,laydate = layui.laydate,$ = layui.jquery;
+		layui.selMeltiple($);
+        //缩略图上传
+        upload.render({
+            elem: '#thumbBtn'
+            ,url: '{:url("UpFiles/upload")}'
+            ,accept: 'images' //普通文件
+            ,exts: 'jpg|png|gif' //只允许上传压缩文件
+            ,done: function(res){
+                console.log(res);
+                $('#cltThumb').attr('src',res.url);
+                $('#thumb').val(res.url);
+            }
+        });
+        //日期
+
+        form.on('submit(submit)', function (data) {
+
+            $.post(url, data.field, function (res) {
+                if (res.code > 0) {
+                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        location.href = res.url;
+                    });
+                } else {
+                    layer.msg(res.msg, {time: 1800, icon: 2});
+                }
+            });
+        });
+        $('.layui-row').on('click','.delimg',function(){
+            var thisimg = $(this);
+
+            layer.confirm('你确定要删除该图片吗？', function(index){
+                thisimg.parents('.layui-col-md3').remove();
+                layer.close(index);
+            })
+        })
+    });
+
+</script>

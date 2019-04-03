@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="/pluge-js/css/drag.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .gt_cut_fullbg_slice {
+            float: left;
+            width: 13px;
+            height: 58px;
+            margin: 0 !important;
+            border: 0px;
+            padding: 0 !important;
+            background-image: url("{$pg_bg}");
+        }
+        .xy_img_bord{
+            -webkit-box-shadow:0 0 15px #0CC;
+            -moz-box-shadow:0 0 15px #0CC;
+            box-shadow:0 0 15px #0CC;
+        }
+        #xy_img{
+            background-image: url({$ico_pic['url']});z-index: 999;width: {$ico_pic['w']}px;height:{$ico_pic['h']}px;position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<form class="form form-horizontal" action="{:U('login/get_data')}" method="post" id="form-login">
+	<div class="row cl put_val">
+		<label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+		<div class="formControls col-8">
+			<input id="if_admin_name" name="if_admin_name" type="text" placeholder="账户" class="input-text size-L" value="">
+		</div>
+	</div>
+	<div class="row cl put_val">
+		<label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+		<div class="formControls col-8">
+			<input id="if_admin_password" name="if_admin_password" type="password" placeholder="密码" class="input-text size-L" value="">
+		</div>
+	</div>
+	
+
+	<div class="row put_val" style="padding-left: 189px;">
+		<div style="width: 260px;height: 116px;" id="Verification" >
+			<volist name='left_pic' id='vo'>
+				<php>
+					$left_symbol  = $vo[0] == 0 ?'':'-';
+					$right_symbol = $vo[1] == 0 ?'':'-';
+				</php>
+				<div class="gt_cut_fullbg_slice" style="background-position:{$left_symbol}{$vo[0]}px {$right_symbol}{$vo[1]}px;"></div>
+			</volist>
+
+
+			<volist name='right_pic' id='vo'>
+				<php>
+					$left_symbol  = $vo[0] == 0 ?'':'-';
+					$right_symbol = $vo[1] == 0 ?'':'-';
+				</php>
+				<div  class="gt_cut_fullbg_slice" style="background-position:{$left_symbol}{$vo[0]}px  {$right_symbol}{$vo[1]}px;"></div>
+			</volist>
+
+			<div style="top: <?php echo($y_point);?>px;left: 0px;display: none;border: 1px solid white" id="xy_img" class="xy_img_bord"></div>
+		</div>
+		 <div id="drag" style="width: 260px;"></div>
+	</div>
+</form>
+
+<script type="text/javascript" src="/static/lib/jquery/1.9.1/jquery.min.js"></script>
+<script src="/pluge-js/js/drag.js" type="text/javascript"></script>
+<script>
+    $('#drag').drag();
+</script>
+</body>
+</html>
