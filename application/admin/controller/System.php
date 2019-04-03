@@ -36,6 +36,20 @@ class System extends Common
             return $this->fetch();
         }
     }
+    public function superior(){
+        if(Request::instance()->isAjax()) {
+            $datas = input('post.');
+            Db::name('config')->where('id','1')->update(['value'=>$datas['first']]);
+            Db::name('config')->where('id','2')->update(['value'=>$datas['second']]);
+            return json(['code' => 1, 'msg' => '分佣比例设置成功!', 'url' => url('system/superior')]);
+        }else{
+            $first = Db::name('config')->where('id',1)->value('value');
+            $second = Db::name('config')->where('id',2)->value('value');
+            $this->assign('first', $first);
+            $this->assign('second', $second);
+            return $this->fetch();
+        }
+    }
     public function trySend(){
         $sender = input('email');
         //检查是否邮箱格式

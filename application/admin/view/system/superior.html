@@ -1,0 +1,60 @@
+{include file="common/head"/}
+<div class="admin-main layui-anim layui-anim-upbit">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>返佣配置</legend>
+    </fieldset>
+    <form class="layui-form layui-form-pane" lay-filter="form-superior">
+        <div class="layui-form-item">
+            <label class="layui-form-label">平台总抽成</label>
+            <div class="layui-input-4">
+                <input type="text" lay-verify="required" name="second" placeholder="返佣默认为百分比" value="{$second}" class="layui-input" maxlength="5">
+                <p style="color: #666">平台总抽成,各级返佣以此为基础进行计算发放</p>
+                <p style="color: #666">抽成形式：(1)固定金额 (2)(默认)根据任务金额按比例抽取</p>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">一级返佣(%)</label>
+            <div class="layui-input-4">
+                <input type="text" lay-verify="required" name="first" placeholder="返佣默认为百分比" value="{$first}" class="layui-input" maxlength="5">
+                <p style="color: #666">一级返佣为当A-B-C三级关系时,C完成任务后平台返佣给B的金额</p>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">二级返佣(%)</label>
+            <div class="layui-input-4">
+                <input type="text" lay-verify="required" name="second" placeholder="返佣默认为百分比" value="{$second}" class="layui-input" maxlength="5">
+                <p style="color: #666">二级返佣为当A-B-C三级关系时，C完成任务后平台返佣给A的金额</p>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
+                <button type="reset" class="layui-btn layui-btn-primary">{:lang('reset')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="common/foot"/}
+<script>
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form,layer = layui.layer,$= layui.jquery;
+        //提交监听
+        form.on('submit(submit)', function (data) {
+            console.log("data");
+            console.log(data.field,);
+            loading =layer.load(1, {shade: [0.1,'#fff']});
+            $.post("{:url('system/superior')}",data.field,function(res){
+                layer.close(loading);
+                if(res.code > 0){
+                    layer.msg(res.msg,{icon: 1, time: 1000},function(){
+                        location.href = res.url;
+                    });
+                }else{
+                    layer.msg(res.msg,{icon: 2, time: 1000});
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>
