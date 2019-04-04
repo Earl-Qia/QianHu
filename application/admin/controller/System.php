@@ -41,12 +41,15 @@ class System extends Common
             $datas = input('post.');
             Db::name('config')->where('id','1')->update(['value'=>$datas['first']]);
             Db::name('config')->where('id','2')->update(['value'=>$datas['second']]);
+            Db::name('config')->where('id','3')->update(['value'=>$datas['ratio']]);
             return json(['code' => 1, 'msg' => '分佣比例设置成功!', 'url' => url('system/superior')]);
         }else{
             $first = Db::name('config')->where('id',1)->value('value');
             $second = Db::name('config')->where('id',2)->value('value');
+            $ratio = Db::name('config')->where('id',3)->value('value');
             $this->assign('first', $first);
             $this->assign('second', $second);
+            $this->assign('ratio', $ratio);
             return $this->fetch();
         }
     }

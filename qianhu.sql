@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-04-03 10:27:20
+Date: 2019-04-04 15:35:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -243,7 +243,7 @@ CREATE TABLE `ensh_auth_rule` (
   `zt` int(1) DEFAULT NULL,
   `menustatus` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=311 DEFAULT CHARSET=utf8 COMMENT='权限节点';
+) ENGINE=MyISAM AUTO_INCREMENT=314 DEFAULT CHARSET=utf8 COMMENT='权限节点';
 
 -- ----------------------------
 -- Records of ensh_auth_rule
@@ -368,11 +368,14 @@ INSERT INTO `ensh_auth_rule` VALUES ('301', 'Task/taskUser', '任务统计', '1'
 INSERT INTO `ensh_auth_rule` VALUES ('295', 'Task/invite', '悬赏招聘', '1', '1', '1', '', '', '293', '2', '1554097129', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('300', 'Users/boss', '审核雇主', '1', '1', '1', '', '', '293', '3', '1554102046', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('305', 'Sales', '业务员', '1', '1', '1', 'icon-user', '', '0', '50', '1554186029', null, '1');
+INSERT INTO `ensh_auth_rule` VALUES ('311', 'System/superior', '分佣设置', '1', '1', '1', '', '', '1', '50', '1554274447', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('306', 'Users/sales', '业务员列表', '1', '1', '1', '', '', '305', '50', '1554186109', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('307', 'Roll/index', '滚动广告', '1', '1', '1', '', '', '28', '50', '1554257174', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('308', 'Demo', '平台业务', '1', '1', '1', 'icon-list', '', '0', '50', '1554257550', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('309', 'Demo/index', '试玩推广', '1', '1', '1', '', '', '308', '50', '1554257597', null, '1');
 INSERT INTO `ensh_auth_rule` VALUES ('310', 'Cad/index', '信用卡', '1', '1', '1', '', '', '308', '50', '1554258175', null, '1');
+INSERT INTO `ensh_auth_rule` VALUES ('312', 'Superior', '收徒躺赚', '1', '1', '1', 'icon-list', '', '0', '50', '1554274804', null, '1');
+INSERT INTO `ensh_auth_rule` VALUES ('313', 'System/superior', '分佣设置', '1', '1', '1', '', '', '312', '50', '1554274975', null, '1');
 
 -- ----------------------------
 -- Table structure for ensh_cad
@@ -399,7 +402,7 @@ CREATE TABLE `ensh_cad` (
 -- ----------------------------
 INSERT INTO `ensh_cad` VALUES ('38', 'demo', '1', '/uploads/20190321/56ab1f8e2538b1e4d2303252a6c5e3bf.jpg', 'http://www.baidu.com', '1', '广告', '2', '3', '1553164538', '4');
 INSERT INTO `ensh_cad` VALUES ('39', '/uploads/20190402/73d6a3385a7603f502122cd6e84c31b5.jpg', '1', '2', 'http://www.enshang.com', '1', '3', '3', '3', '1554195322', '3');
-INSERT INTO `ensh_cad` VALUES ('40', '/uploads/20190402/7752c302bdee3b2545832943953ecbf7.jpg', '6', '6', 'http://www.enshang.com', '1', '6', '6', '6', '1554195469', '2');
+INSERT INTO `ensh_cad` VALUES ('40', '/uploads/20190402/7752c302bdee3b2545832943953ecbf7.jpg', '6', '6', 'http://www.enshang.com', '0', '6', '6', '6', '1554195469', '2');
 INSERT INTO `ensh_cad` VALUES ('41', '/uploads/20190402/4098c4ed63012ebae010c37fe5b146a0.jpg', '798', '789', 'http://www.enshang.com', '1', '789', '789', '789', '1554195574', '1');
 INSERT INTO `ensh_cad` VALUES ('42', '/uploads/20190402/bad0e4396125723b26dc8b705b619287.jpg', '87987', '79879879', 'http://www.enshang.com', '1', '就爱哦睡觉滴哦啊啥决定', '好', '3', '1554196134', null);
 
@@ -515,10 +518,10 @@ INSERT INTO `ensh_config` VALUES ('56', 'sms_appkey', '123456789', 'sms', '0');
 INSERT INTO `ensh_config` VALUES ('57', 'sms_secretKey', '123456789', 'sms', '0');
 INSERT INTO `ensh_config` VALUES ('58', 'sms_product', 'CLTPHP', 'sms', '0');
 INSERT INTO `ensh_config` VALUES ('59', 'sms_templateCode', 'SMS_101234567890', 'sms', '0');
-INSERT INTO `ensh_config` VALUES ('60', 'smtp_server', '163.com', 'smtp', '0');
-INSERT INTO `ensh_config` VALUES ('61', 'smtp_port', '7894756', 'smtp', '0');
-INSERT INTO `ensh_config` VALUES ('62', 'smtp_user', '新密', 'smtp', '0');
-INSERT INTO `ensh_config` VALUES ('63', 'smtp_pwd', '410225199609162639', 'smtp', '0');
+INSERT INTO `ensh_config` VALUES ('60', 'smtp_server', '123', 'smtp', '0');
+INSERT INTO `ensh_config` VALUES ('61', 'smtp_port', '213', 'smtp', '0');
+INSERT INTO `ensh_config` VALUES ('62', 'smtp_user', '15115', 'smtp', '0');
+INSERT INTO `ensh_config` VALUES ('63', 'smtp_pwd', '1213456', 'smtp', '0');
 INSERT INTO `ensh_config` VALUES ('64', 'regis_smtp_enable', '1', 'smtp', '0');
 INSERT INTO `ensh_config` VALUES ('65', 'test_eamil', '932863922@qq.com', 'smtp', '0');
 INSERT INTO `ensh_config` VALUES ('70', 'forget_pwd_sms_enable', '1', 'sms', '0');
@@ -528,6 +531,9 @@ INSERT INTO `ensh_config` VALUES ('73', 'order_pay_sms_enable', '1', 'sms', '0')
 INSERT INTO `ensh_config` VALUES ('74', 'order_shipping_sms_enable', '1', 'sms', '0');
 INSERT INTO `ensh_config` VALUES ('88', 'email_id', '小洋人', 'smtp', '0');
 INSERT INTO `ensh_config` VALUES ('89', 'test_eamil_info', '1231214243', 'smtp', '0');
+INSERT INTO `ensh_config` VALUES ('1', '一级分佣', '5', null, null);
+INSERT INTO `ensh_config` VALUES ('2', '二级分佣', '3', null, null);
+INSERT INTO `ensh_config` VALUES ('3', '佣金比例', '16', '1', null);
 
 -- ----------------------------
 -- Table structure for ensh_debris
@@ -667,6 +673,26 @@ CREATE TABLE `ensh_download` (
 -- ----------------------------
 INSERT INTO `ensh_download` VALUES ('3', '14', '1', 'admin', '测试下载一', 'color:;font-weight:normal;', '', '测试下载一', '测试下载一', '请输入……', '0', '0', '1', '0', '', '0', '0', '0', '1529637588', '0', '/uploads/20180622/a6f6381d3bf0f0814790ad4b5b121794.zip', 'zip', '', '0');
 INSERT INTO `ensh_download` VALUES ('4', '14', '1', 'admin', '测试下载二', 'color:;font-weight:normal;', '', '测试下载二', '测试下载二', '请输入……', '0', '2', '1', '0', '', '0', '0', '0', '1529638055', '1534820130', '/uploads/20180803/d834d080f9c0080abaf9a7578ceea915.zip', 'zip', '', '0');
+
+-- ----------------------------
+-- Table structure for ensh_expend
+-- ----------------------------
+DROP TABLE IF EXISTS `ensh_expend`;
+CREATE TABLE `ensh_expend` (
+  `expendid` int(11) NOT NULL DEFAULT '0' COMMENT '支出ID',
+  `walletid` varchar(32) COLLATE utf8_sinhala_ci NOT NULL COMMENT '钱包ID',
+  `source` tinyint(1) NOT NULL COMMENT '1提现 2任务佣金支出',
+  `style` tinyint(1) DEFAULT NULL COMMENT '资金去向（1支付宝 2银行卡）',
+  `createtime` int(11) NOT NULL COMMENT '创建时间',
+  `cashAccount` varchar(50) COLLATE utf8_sinhala_ci DEFAULT NULL COMMENT '流向账户',
+  `check` tinyint(1) NOT NULL DEFAULT '0' COMMENT '审核状态（0未通过 1通过）',
+  `checkTime` int(11) DEFAULT NULL,
+  PRIMARY KEY (`expendid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='支出表';
+
+-- ----------------------------
+-- Records of ensh_expend
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for ensh_feast
@@ -836,13 +862,12 @@ DROP TABLE IF EXISTS `ensh_incom`;
 CREATE TABLE `ensh_incom` (
   `incomid` int(11) NOT NULL DEFAULT '0' COMMENT '收入ID',
   `walletid` varchar(32) COLLATE utf8_sinhala_ci DEFAULT NULL,
-  `type` tinyint(1) DEFAULT NULL,
-  `source` tinyint(1) DEFAULT NULL,
-  `style` tinyint(1) DEFAULT NULL,
+  `source` tinyint(1) DEFAULT NULL COMMENT '(1做任务赚钱 2充值 3系统添加 4佣金)',
+  `style` tinyint(1) DEFAULT NULL COMMENT '资金方式(）',
   `createtime` int(11) DEFAULT NULL,
   `cashAccount` varchar(50) COLLATE utf8_sinhala_ci DEFAULT NULL COMMENT '流向账户',
   PRIMARY KEY (`incomid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='收入表';
 
 -- ----------------------------
 -- Records of ensh_incom
@@ -4731,7 +4756,7 @@ CREATE TABLE `ensh_system` (
 -- ----------------------------
 -- Records of ensh_system
 -- ----------------------------
-INSERT INTO `ensh_system` VALUES ('1', '网站名称', 'http://www.enshang.com', '权威', '1233', '12313', '13156', '5635', '恩尚网络科技有限公司', '1231688156', '156@qq.com', '/uploads/20190318/1541a4c8038e3f977d4ecd4c123e34e7.jpg', 'open', 'open');
+INSERT INTO `ensh_system` VALUES ('1', '网站名称', 'http://www.enshang.com', '权威', '1233', '12313', '13156', '5635', '恩尚网络科技有限公司', '1231688156', '156@qq.com', '/uploads/20190403/0ec6264a4d8a191763a321446af01551.jpg', 'open', 'open');
 
 -- ----------------------------
 -- Table structure for ensh_tags
@@ -4855,12 +4880,12 @@ CREATE TABLE `ensh_users` (
 -- Records of ensh_users
 -- ----------------------------
 INSERT INTO `ensh_users` VALUES ('1', '123123@qq.com', '4297f44b13955235245b2497399d7a93', null, '1', '0', '1516075631', '0', '', '123', '15938351131', '0', '', null, null, '/uploads/20180613/fcb729987d8e9339bd9b2e85c85f3028.jpg', '32', '394', '3330', '0', 'admin1', '2', '0', '', '不要应为走得太远，就忘了当初为什么出发！', 'hide', null, null);
-INSERT INTO `ensh_users` VALUES ('2', 'aaa', 'e10adc3949ba59abbe56e057f20f883e', null, '1', '0', '1554170000', '0', '', '123456', '12345678911', '0', '', null, null, null, '0', '0', '0', '0', 'Jan', '14', '0', '', '', 'hide', null, null);
-INSERT INTO `ensh_users` VALUES ('3', '46546', '4297f44b13955235245b2497399d7a93', null, '1', '0', '0', '0', '', '51561231', '1588888888', '0', '', null, null, null, '0', '0', '0', '0', 'admin3', '11', '0', '', '', 'hide', null, null);
-INSERT INTO `ensh_users` VALUES ('6', '11', '1111111', null, '0', '0', '1554175800', '0', '', '111', '15938351111', '0', '', null, null, null, '0', '0', '0', '0', 'admin4', '11', '0', '', '', 'hide', null, null);
+INSERT INTO `ensh_users` VALUES ('2', 'aaa', 'e10adc3949ba59abbe56e057f20f883e', null, '1', '0', '1554170000', '0', '', '123456', '12345678911', '0', '', null, null, null, '0', '0', '0', '0', 'Jan', '14', '0', '', '', 'hide', '1', null);
+INSERT INTO `ensh_users` VALUES ('3', '46546', '4297f44b13955235245b2497399d7a93', null, '1', '0', '0', '0', '', '51561231', '1588888888', '0', '', null, null, null, '0', '0', '0', '0', 'admin3', '11', '0', '', '', 'hide', '2', null);
+INSERT INTO `ensh_users` VALUES ('6', '11', '1111111', null, '0', '0', '1554175800', '0', '', '111', '15938351111', '0', '', null, null, null, '0', '0', '0', '0', 'admin4', '11', '0', '', '', 'hide', '5', null);
 INSERT INTO `ensh_users` VALUES ('13', '15938351131@qq.com', '123456', null, '1', '0', '1554175810', '0', '', '', '15938351131', '0', '', null, null, null, '0', '0', '0', '0', 'Jan', '11', '0', '', '', 'hide', null, null);
-INSERT INTO `ensh_users` VALUES ('12', '157493465', '123456123', null, '1', '0', '1554175806', '0', '', '', '15838351111', '0', '', null, null, null, '0', '0', '0', '0', 'janmo', '11', '0', '', '', 'hide', null, null);
-INSERT INTO `ensh_users` VALUES ('4', '157493465@qq.com', '123456', null, '1', '0', '1554175900', '0', '', '157493465', '15938351111', '0', '', null, null, null, '0', '0', '0', '0', '缄默', '11', '0', '', '', 'hide', null, null);
+INSERT INTO `ensh_users` VALUES ('5', '157493465', '123456123', null, '1', '0', '1554175806', '0', '', '', '15838351111', '0', '', null, null, null, '0', '0', '0', '0', 'janmo', '11', '0', '', '', 'hide', '4', null);
+INSERT INTO `ensh_users` VALUES ('4', '157493465@qq.com', '123456', null, '1', '0', '1554175900', '0', '', '157493465', '15938351111', '0', '', null, null, null, '0', '0', '0', '0', '缄默', '11', '0', '', '', 'hide', '3', null);
 INSERT INTO `ensh_users` VALUES ('15', '1212121', 'e10adc3949ba59abbe56e057f20f883e', null, '1', '0', '1554182571', '0', '', '', '15938351131', '0', '', null, null, null, '0', '0', '0', '0', '缄默', '12', '0', '', '', 'hide', null, null);
 INSERT INTO `ensh_users` VALUES ('16', '时时', '123456', null, '1', '0', '1554183665', '0', '', '', '时时', '0', '', null, null, null, '0', '0', '0', '0', '缄默', '12', '0', '', '', 'hide', null, null);
 INSERT INTO `ensh_users` VALUES ('14', '231', '1213456', null, '1', '0', '1554183721', '0', '', '', '321', '0', '', null, null, null, '0', '0', '0', '0', '15115', '12', '0', '', '', 'hide', null, null);
@@ -4891,7 +4916,7 @@ CREATE TABLE `ensh_user_demo` (
   `createtime` int(11) NOT NULL COMMENT '提交时间',
   `num` int(8) NOT NULL DEFAULT '0' COMMENT '试玩儿次数',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1554181753 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='任务表';
+) ENGINE=MyISAM AUTO_INCREMENT=1554181753 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='用户试玩儿';
 
 -- ----------------------------
 -- Records of ensh_user_demo
@@ -4939,7 +4964,7 @@ CREATE TABLE `ensh_user_sales` (
   `auditortime` int(11) DEFAULT NULL COMMENT '审核时间',
   `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '(0进行中 1已完成 )',
   PRIMARY KEY (`salesid`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='任务表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='业务员业务表';
 
 -- ----------------------------
 -- Records of ensh_user_sales
@@ -4961,7 +4986,7 @@ CREATE TABLE `ensh_user_task` (
   `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '(0进行中 1已完成 )',
   `successTime` int(11) DEFAULT NULL COMMENT '完成时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='任务表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_sinhala_ci COMMENT='用户完成任务表';
 
 -- ----------------------------
 -- Records of ensh_user_task
@@ -4990,8 +5015,8 @@ CREATE TABLE `ensh_wallet` (
 INSERT INTO `ensh_wallet` VALUES ('1', '1', '1111.00', '99.00', '200.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('2', '2', '300.00', '11.00', '11.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('3', '3', '25.00', '22.00', '22.00', '1');
-INSERT INTO `ensh_wallet` VALUES ('4', '4', '44.00', '2.00', '4.00', '1');
-INSERT INTO `ensh_wallet` VALUES ('12', '5', '0.00', '0.00', '0.00', '1');
+INSERT INTO `ensh_wallet` VALUES ('4', '4', '44.00', '84.00', '4.00', '1');
+INSERT INTO `ensh_wallet` VALUES ('5', '5', '0.00', '140.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('13', '6', '11.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('14', '7', '0.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('15', '8', '0.00', '0.00', '0.00', '1');
@@ -5010,7 +5035,7 @@ INSERT INTO `ensh_wallet` VALUES ('26', '20', '0.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('27', '21', '0.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('28', '22', '0.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('29', '23', '0.00', '0.00', '0.00', '1');
-INSERT INTO `ensh_wallet` VALUES ('30', '24', '0.00', '0.00', '0.00', '1');
+INSERT INTO `ensh_wallet` VALUES ('30', '24', '111.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('31', '25', '0.00', '0.00', '0.00', '1');
 INSERT INTO `ensh_wallet` VALUES ('32', '26', '0.00', '0.00', '0.00', '1');
 

@@ -1,5 +1,5 @@
 <?php
-namespace app\admin\controller;
+namespace app\index\controller;
 use think\Db;
 use think\Request;
 use think\View;
@@ -25,7 +25,6 @@ class Superior extends Common{
         $result['second'] = $second;
         $result['father'] = $father;
         $result['grd_ft'] = $grd_ft;
-        return $result;
         $this->writeMoney($result,$sup);
     }
     //获取上级ID
