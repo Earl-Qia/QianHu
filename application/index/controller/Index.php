@@ -18,8 +18,8 @@ class Index extends Common{
         foreach ($son as $key => $value) {
             $grandson[] = db('users')->where('superior',$key)->column('username','id');
         }
-        dump($son);
-        dump($grandson);
+        // dump($son);
+        // dump($grandson);
         $this->assign('son',$son);
         $this->assign('grandson',$grandson);
         $this->fetch('posterity');
