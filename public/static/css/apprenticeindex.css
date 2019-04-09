@@ -1,0 +1,33 @@
+
+.recruitTop{width: 100%;background-color: #fff;padding: 1.875rem;}
+.recruitTop .recruitBanner{width: 100%;height: 22.5rem;border-radius: 10px;background-color: #B0B0B0;}
+.recruitTop .recruitBanner>div{width: 100%;line-height: 1.875rem;font-size: 1.5rem;position: absolute;bottom: 4.8125rem;}
+.recruitTop .recruitBanner>div>p{padding-left: 3.375rem;color: #fff;}
+
+.recruitBtn{width: 100%;height: 8.75rem;display: flex;opacity:0.8;justify-content: space-between;margin-top: 1.875rem;}
+.recruitBtn>div{width: 20.625rem;height: 8.75rem;border-radius: 10px;text-align: center;line-height: 8.75rem;font-size: 1.75rem;color: #fff;}
+.recruitBtn>div.list{background:linear-gradient(168deg,rgba(255,85,69,1),rgba(255,155,95,1));}
+.recruitBtn>div.share{background:linear-gradient(168deg,rgba(45,113,249,1),rgba(64,196,239,1));}
+.recruitBtn>div i{display: inline-block;width: 3.5625rem;vertical-align: middle;margin-right: 1.6875rem;}
+.recruitBtn>div i img{display:block;width:3.5625rem;height: 3.5625rem; }
+
+.recruitExplain{width: 100%;background-color: #fff;padding-bottom: 8.75rem;}
+.recruitExplain ul{width: 100%;}
+.recruitExplain ul li{width: 100%;border-bottom: 1px solid #DBDBDB;padding: 2rem;}
+.recruitExplain ul li:last-child{border: 0 none;}
+.recruitExplain ul li h4{width: 100%;font-size: 2rem;margin-bottom: 1.5625rem;}
+.recruitExplain ul li p{width: 100%;font-size: 1.75rem;color: #666666;}
+.recruitExplain ul li p span{color: #FF7420;}
+
+
+/* 分享收徒页面 */
+.photoBox{width: 100%;padding: 1.875rem;}
+.photoBox .photo{width: 100%;height: 62.5rem;border-radius: 1.25rem;overflow: hidden;}
+.photoBox .photo>img{width: 100%;height: 100%;background-color: #ACACAC;display: block;}
+.photoBox .code{width: 8.375rem;height: 8.375rem;border-radius: 10px;background-color: #fff;position: absolute;right: 3.75rem;bottom:3.75rem;overflow: hidden;}
+.photoBox .code img{width: 100%;height: 100%;background-color: #fff;display: block;}
+
+.shareBtn{margin-top: 2.5rem;width: 100%;height: 5rem;margin-bottom: 8.75rem;}
+.shareBtn>div{width: 50%;height: 100%;float: left;display: flex;}
+.shareBtn>div>button{width: 13.75rem;height: 5rem;background-color: #fff;color: #FF7420;border-radius: 2.5rem;border: 1px solid #FF7420;margin: auto;font-size: 1.75rem;}
+

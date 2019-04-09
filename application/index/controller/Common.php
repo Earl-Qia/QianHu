@@ -4,10 +4,11 @@ use think\Db;
 use think\Controller;
 class Common extends Controller
 {
+    protected $sMd5 = "lingshang";
     //protected $mod,$role,$system,$nav,$menudata,$cache_model,$categorys,$module,$moduleid,$adminRules,$HrefId;
     public function _initialize()
     {
-      
+        
     }
     //空操作
     public function _empty(){
@@ -19,5 +20,11 @@ class Common extends Controller
         $result['url'] = $url;
         $result['code'] = $code;
         return $result;    
+    }
+    public function verify(){
+        //判断用户是否登录
+        if (!session('aid')) {
+            $this->redirect('index/login/index');
+        }    
     }
 }

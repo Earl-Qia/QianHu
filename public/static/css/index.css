@@ -1,0 +1,66 @@
+.bannerBox{width: 100%;height: 31.25rem;background-color: #fff;}
+.banner{width: 100%;height: 25.625rem;}
+
+.message{width: 100%;height: 5.625rem;line-height: 5.625rem;padding: 0 1.5rem;}
+.message>div{float: left;}
+.message .msglogo{width: 4.625rem;height: 100%;display: flex;}
+.message .msglogo img{width: 4.625rem;margin: auto;}
+
+.message .news {
+    width: auto;
+	height:100%;
+	background:#fff;
+    overflow:hidden;
+    float: none;
+}
+
+.swiper-container1 {
+    width: 100%;
+    height: 100%;
+}
+.swiper-container1 .swiper-slide{height: 5.625rem;overflow: hidden;padding-left: .625rem;}
+.swiper-container1 .swiper-slide .content{float: left;color: #7E7E7E;font-size: 1.5rem;}
+.swiper-container1 .swiper-slide .time{float: right;color: #73C9FF;font-size: 1.375rem;}
+
+.swiper-container2 {
+    width: 100%;
+    height: 100%;
+}
+.swiper-container2 img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-pagination-bullet{
+    background-color: #9FCDFF;
+}
+.swiper-pagination-bullet-active{
+    width: 1.5rem;
+    background-color: #027CFF;
+    border-radius: .25rem;
+}
+
+.indexBase{width: 100%;padding-top: 2.5rem;margin-top: 1rem;background-color: #fff;}
+.indexBase>h1{width: 100%;display: flex;font-size: 2rem;}
+.indexBase>h1 div{overflow: hidden;font-size: 1.25rem;color: #FF7421;font-weight: normal;position: relative;min-width: 15.625rem;}
+.indexBase>h1 div span{position: absolute;left: .5rem;bottom: 0;}
+.indexBase>h1 i{width: .375rem;height: 1.75rem;border-radius: .1875rem;background-color: #0D91FF;display: inline-block;margin: auto 1rem;}
+.task .taskbtn{width: 100%;margin-top: 1.75rem;display: flex; justify-content: space-around;}
+.task .taskbtn>div{width: 7.5rem;}
+.task .taskbtn>div>img{width: 7.5rem;height: 7.5rem;}
+.task .taskbtn>div>p{width: 100%;text-align: center;font-size: 1.25rem;color: #716F6F;}
+.task .tasknum{width: 100%;height: 17.125rem;overflow: hidden;display: flex;}
+.task .tasknum img{display: block;margin:auto;}
+.tasknumCont{position: absolute;top: 54%;text-align: center;width: 18rem;height: 3rem;line-height: 3rem;left: 53%;transform: translateX(-50%);font-size: 1.5rem;color: #FFECB1;font-style: italic;}
+.tasknumCont span{color: #fff;}
+
+.playRecommend{margin-bottom:  5.9375rem}
+.playRecommendCot{width: 100%;padding: 0 1.25rem;height: 10rem;}
+.playRecommendCotLogo{width: 10rem;height: 100%;display: flex;float: left; }
+.playRecommendCotLogo img{width: 6.25rem;height:6.25rem;margin: auto; }
+.playRecommendCotText{width: auto;height: 100%;padding-top: 1.875rem;margin-left: 10rem;border-bottom: .0625rem solid #D2D2D2;}
+.playRecommendCotText p.title{float: left;font-size: 2rem;color: #666666;font-weight:bold;}
+.playRecommendCotText p.money{float: left;font-size: 1.5rem;color: #999999;margin-top: 1.5625rem}
+.playRecommendCotBtn{float: right;}
+.playRecommendCotBtn button{width: 6.75rem;line-height: 3.125rem;height: 3.125rem;background:linear-gradient(0deg,rgba(253,155,28,1),rgba(251,197,33,1));border-radius: 1.5625rem;color: #fff;font-size: 1.625rem;font-weight:bold;}
+.playRecommendCotBtn p{text-align: right;font-size:1.25rem;color: #B8B8B8;}
+

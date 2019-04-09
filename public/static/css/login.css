@@ -1,0 +1,17 @@
+
+.header{width: 100%;padding : 11.25rem 3.125rem;}
+.header .titile{width: 100%;color: #FF7420;font-weight:bold;font-style:italic;font-size:2.5rem;}
+.header img{width: 9.625rem;height: 9.625rem;margin: 6rem auto 0;display: block;background-color: #BFBFBF;border-radius: 2.5rem;overflow: hidden;}
+
+.formBox{width: 100%;padding:0 3.125rem;}
+.formBox>form>div{overflow: hidden;width: 100%;height: 6.5625rem;line-height: 6.5625rem;border-bottom: 1px solid #DADADA;}
+.formBox>form>div>label,.formBox>form>div>input{height: 100%;}
+.formBox>form>div>label{width: 9.125rem;font-size: 1.75rem;text-align: center;float: left;}
+.formBox>form>div>input{font-size: 1.5rem;color: #999999;width: auto;position: relative;bottom: -1px}
+.formBox>form>div>input::placeholder{font-size: 1.5rem;color: #999999;}
+.formBox>form>div>.fr{font-size: 1.5rem;color: #666666;}
+.formBox>form>p{width: 100%;padding-left: 2rem;color: #999999;font-size: 1.375rem;margin-top: 1.5625rem;}
+.formBox>form>p>input{width: 24px;height: 24px;vertical-align: middle;}
+.formBox>form>button{width: 100%;height: 4.875rem;border-radius: 2.4375rem;background:linear-gradient(80deg,rgba(253,155,28,1),rgba(255,116,32,1));color: #fff;font-size: 1.75rem;margin-top: 7.5rem;}
+.linkGo{width: 100%;padding:0 3.125rem;font-size: 1.5rem;color: #666666;margin-top: 1.25rem;}
+.linkGo>a{color: #666666;}

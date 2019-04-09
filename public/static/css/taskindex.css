@@ -1,0 +1,83 @@
+
+#taskExplain .taskTitle{width: 100%;background-color: #fff;padding: 1.875rem;overflow: hidden;}
+#taskExplain .taskTitle .fl h3{font-size: 2.25rem;}
+#taskExplain .taskTitle .fl .money{font-size: 1.75rem;color: #F00D00;margin-top: 1.875rem;}
+#taskExplain .taskTitle .fl .num{font-size: 1.5rem;color: #999999;margin-top: 1.375rem;}
+#taskExplain .taskTitle .fr{font-size: 1.5rem;color: #999999;line-height: 3rem;}
+
+#taskExplain .taskExplain{padding: 1.875rem;background-color: #fff;width: 100%;}
+#taskExplain .taskExplain h4{font-size: 2rem;margin-bottom: 1.875rem;}
+#taskExplain .taskExplain p{width: 100%;font-size: 1.75rem;color: #666666;line-height: 2.625rem;}
+
+#taskExplain .getTask{width: 100%;background-color: #fff;padding: 11.5625rem 1.875rem;}
+#taskExplain .getTask button{width: 100%;height: 5rem;background:linear-gradient(80deg,rgba(253,155,28,1),rgba(255,116,32,1));font-size: 1.75rem;color: #fff;border-radius: 2.5rem;}
+
+#taskMoney .TMheader{width: 100%;padding: 1.875rem;padding-bottom: 2.5rem;background-color: #fff;}
+#taskMoney .TMheader>p{width: 100%;font-size: 1.5rem;height: 2.125rem;line-height: 2.125rem;margin-bottom: 1.75rem;}
+#taskMoney .TMheader>p i{width: 1.625rem;height: 100%;float: left;margin-right: .8125rem;}
+#taskMoney .TMheader>p i img{width: 1.625rem;}
+#taskMoney .TMheader .banner{width: 100%;height: 22.5rem;background-color: #B0B0B0;border-radius:10px;}
+#taskMoney .TMheader .banner button{width: 7.5rem;height: 3.125rem;border-radius: 1.5625rem;font-size: 1.5rem;color: #fff;background:linear-gradient(80deg,rgba(253,155,28,1),rgba(255,116,32,1)); position: absolute;right: 1.25rem;bottom: 20px;}
+
+#taskMoney .taskcot{width: 100%;overflow: hidden;background-color: #fff;padding-bottom: 5.625rem;}
+#taskMoney .taskcot ul{width: 100%;overflow: hidden;}
+#taskMoney .taskcot ul li{padding: 1.625rem 1.875rem 0;width: 100%;overflow: hidden;height: 9.125rem;border-bottom: 1px solid #DBDBDB;}
+#taskMoney .taskcot ul li .Timg{width:5.625rem;height: 100%;margin-right: 1.625rem; }
+#taskMoney .taskcot ul li .Timg img{width: 5.625rem;height: 5.625rem;border-radius: 50%;background-color: #B0B0B0;display: block;}
+#taskMoney .taskcot ul li .mid .midTitle{font-size: 1.875rem;}
+#taskMoney .taskcot ul li .mid .midNum{font-size: 1.5rem;color: #999999;margin-top: 1.25rem;}
+#taskMoney .taskcot ul li .mid .midNum span{color: #FF7420;margin-right: 1.25rem;}
+#taskMoney .taskcot ul li .fr{text-align: right;}
+#taskMoney .taskcot ul li .fr .frmoney{font-size: 2rem;color: #F00D00;}
+#taskMoney .taskcot ul li .fr .frtime{font-size: 1.5rem;color: #999999;margin-top: 1.25rem;}
+
+#taskform{width: 100%;background-color: #fff;overflow: hidden;padding: 2.5rem 1.875rem;}
+#taskform ul{width: 100%;overflow: hidden;}
+#taskform ul li{width: 100%;overflow: hidden;margin-bottom: 2.75rem;}
+#taskform ul li label{width:10.9375rem;line-height: 4.25rem;font-size: 1.75rem;display: block;float: left;}
+#taskform ul li label span{color: #FF7420;vertical-align: middle;font-size: 2rem;font-weight: bold; display: inline-block;margin-right: .625rem;}
+#taskform ul li>div{width:auto;margin-left: 10.9375rem;}
+#taskform ul li input{width:100%;display: block;height:  4.25rem;line-height: 4.25rem;border: 1px solid #CCCCCC;font-size: 1.75rem;color: #666666;padding: 0 2rem;border-radius:10px;float: left;}
+#taskform ul li textarea{width: 100%;display: block;height: 12.5rem;line-height: 4.25rem;border: 1px solid #CCCCCC;font-size: 1.75rem;color: #666666;padding: 0 2rem;border-radius:10px;}
+#taskform button{width: 100%;height: 5rem;background:linear-gradient(80deg,rgba(253,155,28,1),rgba(255,116,32,1));color: #fff;font-size: 1.75rem;border-radius: 2.5rem;margin: 3.125rem auto 9.375rem;}
+
+
+#taskListBox .TLtitle{width: 100%;overflow: hidden;height: 6.25rem;background-color: #fff;}
+#taskListBox .TLtitle>div{width: 50%;float: left;height: 100%;}
+#taskListBox .TLtitle>div>.title{width: 11.25rem;height: 100%;margin: 0 auto;line-height:  6.25rem;font-size: 2rem;color: #666666;position: relative;text-align: center;}
+#taskListBox .TLtitle>div>.title.active{color: #FF7420;}
+#taskListBox .TLtitle>div>.title.active::after{content: '';position: absolute;width: 100%;height: .25rem;background-color: #FF7420;left: 0;bottom: 0;}
+
+#taskListBox .TLCont{width: 100%;overflow: hidden;}
+#taskListBox .TLCont>div{display: none;}
+
+#taskListBox .TLContTaskBox{width: 100%;overflow: hidden;padding: 1.875rem;}
+#taskListBox .TLContTCont{width: 100%;overflow: hidden;background-color: #fff;border-radius:10px;padding: 1.875rem;}
+#taskListBox .TLContTask{width: 100%;overflow: hidden;}
+#taskListBox .TLContTask .fl h5{font-size: 1.875rem;font-weight:500;margin-bottom: 1.25rem;}
+#taskListBox .TLContTask .fl p{font-size: 1.5rem;color: #999999;}
+#taskListBox .TLContTask .fr{font-size: 2rem;color: #F00D00;margin-top: 1.375rem;}
+#taskListBox .TLContMid{width: 100%;display: flex;justify-content: space-between;margin-top: 1.5rem;}
+#taskListBox .TLContMid img{width: 11.25rem;height: 14.375rem;border-radius: 4px;background-color: #E1E1E1;display: block;}
+#taskListBox .TLContBtn{float: right;margin: 2.5rem 0}
+#taskListBox .TLContBtn button{width: 10rem;height: 3.75rem;border-radius: 1.875rem;font-size: 1.5rem;color: #fff;float: left;margin-left: 2.5rem;}
+#taskListBox .TLContBtn .Tno{background:linear-gradient(45deg,rgba(8,176,134,1),rgba(45,208,141,1));}
+#taskListBox .TLContBtn .Tok{background:linear-gradient(45deg,rgba(255,116,32,1),rgba(250,156,100,1));}
+
+#taskListBox .TLContRecruit{width: 100%;overflow: hidden;padding:0 1.875rem;}
+#taskListBox .TLContRecruit .TLCRTitle{width: 100%;height: 5.5rem;line-height: 5.5rem;font-size: 1.5rem;color: #888888;}
+#taskListBox .TLContRecruit .TLCRTitle>div{float: left;margin-right: 4.375rem;}
+#taskListBox .TLContRecruit .TLCRTitle>div.active{color: #FF7420;}
+#taskListBox .TLCRCont{width: 100%;overflow: hidden;}
+#taskListBox .TLCRCont .TLCRContList{width: 100%;overflow: hidden;display: none;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot{width: 100%;overflow: hidden;padding: 1.875rem;background-color: #fff;border-radius:10px;margin-bottom: 1rem;padding-bottom: 0;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot h4{font-size: 1.875rem;font-weight:500;margin-bottom: 1rem;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot h5{font-size: 1.5rem;font-weight:500;color: #666666;margin-bottom: 1rem;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot h6{font-size: 1.5rem;font-weight:400;color: #999999;margin-bottom: 1rem;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot p{font-size: 1.5rem;color: #999999;line-height: 2.25rem;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot .welfare{width: 100%;overflow: hidden;margin: 1.5rem 0;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot .welfare div{line-height: 2.125rem;height: 2.125rem;font-size: 1.375rem;padding: 0 .625rem;background-color: #FFE4D4;color: #888888;float: left;margin-right: 1.5rem;}
+#taskListBox .TLCRCont .TLCRContList .TLCRContCot .msg{color: #FF7420;}
+
+
+

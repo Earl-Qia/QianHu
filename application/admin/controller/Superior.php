@@ -10,12 +10,13 @@ class Superior extends Common{
 
     public function index(){
         //分佣比例(n%)
+        $terrace = db('config')->where('id',3)->value('value')/100;
         $first = db('config')->where('id',1)->value('value')/100;
         $second = db('config')->where('id',2)->value('value')/100;
         echo 'F:'.$first."//S:".$second."<br>";
         //自己Id
         // $self = input('post.id');
-        $self = "6";
+        $self = "7";
         // 分成佣金
         // $sup = input('post.sup');
         $sup = '200';
@@ -25,7 +26,6 @@ class Superior extends Common{
         $result['second'] = $second;
         $result['father'] = $father;
         $result['grd_ft'] = $grd_ft;
-        return $result;
         $this->writeMoney($result,$sup);
     }
     //获取上级ID
@@ -34,14 +34,36 @@ class Superior extends Common{
         return ($father)?$father:'';
     }
     //写入金额
+    /*
+    Array：$ratio 返佣账户与比例
+    Int：  $sup 总佣金
+    */
     public function writeMoney($ratio,$sup){
         //获取总佣金
         dump($sup);
-        //更新流水记录表
-        //更新钱包
-        if($ratio['father'])
-        db('wallet')->where('userid',$ratio['father'])->setInc('makeMoney',$sup*$ratio['first']);
-        if($ratio['grd_ft'])
-        db('wallet')->where('userid',$ratio['grd_ft'])->setInc('makeMoney',$sup*$ratio['second']);
+        dump($ratio);
+        //更新钱包、流水记录表
+        if($ratio['father']){
+            echo db('wallet')->where('userid',$ratio['father'])->setInc('makeMoney',$sup*$ratio['first']);
+            $fw = db('wallet')->where('userid',$ratio['father'])->value('walletid');
+            $data[]=[
+                'walletid'  =>  $fw,
+                'source'    =>  '4',
+                'money'     =>  $sup*$ratio['first'],
+                'createtime'=>  time(),
+            ];
+        }
+        if($ratio['grd_ft']){
+            echo db('wallet')->where('userid',$ratio['grd_ft'])->setInc('makeMoney',$sup*$ratio['second']);
+            $fw = db('wallet')->where('userid',$ratio['grd_ft'])->value('walletid');
+            $data[]=[
+                'walletid'  =>  $fw,
+                'source'    =>  '4',
+                'money'     =>  $sup*$ratio['second'],
+                'createtime'=>  time(),
+            ];
+        }
+        if(isset($data))
+        echo db('incom')->insertAll($data);
     }
 }

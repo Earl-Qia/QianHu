@@ -1,0 +1,11 @@
+
+.photoBox{width: 100%;padding: 1.875rem;}
+.photoBox .photo{width: 100%;height: 55.875rem;border-radius: 1.25rem;overflow: hidden;}
+.photoBox .photo>img{width: 100%;height: 100%;background-color: #ACACAC;display: block;}
+.photoBox .code{width: 8.375rem;height: 8.375rem;border-radius: 10px;background-color: #fff;position: absolute;right: 2.5rem;bottom: 2.5rem;overflow: hidden;}
+.photoBox .code img{width: 100%;height: 100%;background-color: #fff;display: block;}
+
+.shareBtn{margin-top: 2.5rem;width: 100%;height: 5rem;margin-bottom: 8.75rem;}
+.shareBtn>div{width: 50%;height: 100%;float: left;display: flex;}
+.shareBtn>div>button{width: 13.75rem;height: 5rem;background-color: #fff;color: #FF7420;border-radius: 2.5rem;border: 1px solid #FF7420;margin: auto;font-size: 1.75rem;}
+

@@ -1,0 +1,81 @@
+
+#myMsgBox .header{width: 100%;overflow: hidden;background-color: #fff;}
+#myMsgBox .headerMsg{width: 100%;height: 8.125rem;margin-top: 3.125rem;}
+#myMsgBox .headerMsg >div:first-child{float: left;width: 11.875rem;height: 8.125rem;display: flex;}
+#myMsgBox .headerMsg >div:first-child img{width: 8.125rem;height: 8.125rem;border-radius: 50%;overflow: hidden;margin: auto;background-color: #E4E4E4}
+#myMsgBox .headerMsg >div:last-child{width: auto;height: 100%;margin-left:  11.875rem;display: flex;flex-direction:column;  justify-content: center; }
+#myMsgBox .headerMsg >div:last-child>p:first-child{font-size: 2rem;font-weight:bold;}
+#myMsgBox .headerMsg >div:last-child>p:last-child{font-size: 1.5rem;color: #666666;margin-top: 1.25rem;}
+
+#myMsgBox .headerMsgBtm{margin-top: 3.3125rem;width: 100%;height: 1.875rem;margin-bottom: 2.5rem;}
+#myMsgBox .headerMsgBtm>div{width: 50%;text-align: center;font-size: 1.75rem;color: #444444;float: left;}
+#myMsgBox .headerMsgBtm>div:first-child{border-right: 1px solid #DBDBDB;}
+
+#myMsgBox .mt16{width: 100%;background-color: #fff}
+#myMsgBox .mt16>ul{width: 100%;}
+#myMsgBox .mt16>ul>li{width: 100%;height: 6.5rem;font-size: 1.75rem;color: #444444;line-height: 6.5rem;}
+#myMsgBox .mt16>ul>li>i{width: 6rem;height: 100%;display: flex;float: left;}
+#myMsgBox .mt16>ul>li>i img{width: 2rem;height: 2rem;margin: auto;}
+#myMsgBox .mt16>ul>li>p{float: right;color: #888888;height: 100%;}
+#myMsgBox .mt16>ul>li>p i{width:4.25rem;height: 100%;display: flex;float: right;}
+#myMsgBox .mt16>ul>li>p i img{width:14px;height: 26px;margin: auto;}
+
+.incomeheader{width: 100%;height: 31.25rem;display: flex;background: url('/static/img/IncomeBanner.png') no-repeat center;}
+.incomeheader>div{margin: auto;text-align: center;color: #fff;}
+.incomeheader>div p{color: #fff;}
+.incomeheader>div .money{font-size: 3.75rem;}
+.incomeheader>div .unit{font-size: 1.5rem;}
+
+.incomeContent{width: 100%;padding:0 1.875rem 5rem;background-color: #fff;}
+.incomeContent li{width: 100%;height: 7.875rem;border-bottom: 1px solid #DBDBDB;overflow: hidden;padding-top: 1.875rem;}
+.incomeContent li .title{font-size: 1.75rem;}
+.incomeContent li .name{font-size: 1.5rem;color: #888888;margin-top: .7rem;}
+.incomeContent li .name span{margin-right: 1.375rem;}
+.incomeContent li .money{font-size: 2rem;color: #FF7420;}
+
+.incomeTitle{width: 100%;overflow: hidden;height: 6.25rem;background-color: #fff;}
+.incomeTitle>div{width: 50%;float: left;height: 100%;}
+.incomeTitle>div>.title{width: 11.25rem;height: 100%;margin: 0 auto;line-height:  6.25rem;font-size: 2rem;color: #666666;position: relative;text-align: center;}
+.incomeTitle>div>.title.active{color: #FF7420;}
+.incomeTitle>div>.title.active::after{content: '';position: absolute;width: 100%;height: .25rem;background-color: #FF7420;left: 0;bottom: 0;}
+
+.incomeCotBox{width: 100%;overflow: hidden;}
+.incomeCotBox>div{width: 100%;overflow: hidden;display: none;}
+
+.myWallet{width: 100%;overflow: hidden;padding: 1.875rem;background-color: #fff;}
+.myWalletCot{width: 100%;height: 20rem;border-radius: 20px;background: url('/static/img/walletBanner.png') no-repeat center;padding: 3.75rem;position: relative;}
+.myWalletCot p{color: #fff;}
+.myWalletCot .money{font-size: 3.75rem;}
+.myWalletCot .unit{font-size: 1.75rem;}
+.myWalletCot .btnBox{position: absolute;right: 3.125rem;bottom: 3.125rem;}
+.myWalletCot .btnBox button{float: left;margin-left: 2.25rem;width: 7.5rem;height: 3.125rem;border-radius: 12px;border: 1px solid #fff;font-size: 1.75rem;color: #fff;background-color: transparent;}
+
+#withdrawBox .withdrawMsg{width: 100%;overflow: hidden;padding: 0 1.875rem;font-size: 1.75rem;background-color: #fff;border-bottom:1px solid #DBDBDB;height: 6.625rem;line-height: 6.625rem;}
+#withdrawBox .withdrawMsg label{height: 100%;width: 14.125rem;float: left;}
+#withdrawBox .withdrawMsg>div{height: 100%;width: auto;margin-left: 14.125rem;overflow: hidden;color:#666666;}
+#withdrawBox .withdrawMsg>div>i{width: 2rem;height: 100%;display: block;float: left;display: flex;margin-right: .75rem;}
+#withdrawBox .withdrawMsg>div>i img{width: 2rem;height: 2rem;margin: auto;}
+#withdrawBox .withdrawMsg>div input{width: 100%;height: 99%;float: left;font-size: 1.75rem;color:#666666;}
+#withdrawBox .withdrawMsg.money>div input{color: #FF7420;}
+#withdrawBox .withdrawMsg.money>div input::placeholder{color: #999999;}
+#withdrawBox .btnbox{width: 100%;padding: 0 1.875rem;margin-top: 25rem;}
+#withdrawBox .btnbox button{width: 100%;color: #fff;font-size: 1.75rem;background:linear-gradient(80deg,rgba(253,155,28,1),rgba(255,116,32,1));height: 5rem;border-radius: 2.5rem;}
+
+.ANumBox{width: 100%;overflow: hidden;background-color: #fff;}
+.ANumTit{width: 100%;min-height: 6.75rem;line-height: 6.75rem;}
+.ANumTit>.fl{width: 8.375rem;height: 6.75rem;display: flex;}
+.ANumTit>.fl img{width: 4.375rem;height: 4.375rem;margin: auto;border-radius: 50%;display: block;background-color: #B3B3B3;}
+.ANumTit>.ANumTitFr{width: auto;height:6.75rem;line-height: 6.75rem;margin-left: 8.375rem;border-bottom: 1px solid #DBDBDB;}
+.ANumTit>.ANumTitFr>.fl{color: #666666;font-size: 1.75rem;}
+.ANumTit>.ANumTitFr>.fr{color: #999999;font-size: 1.5rem;}
+.ANumTit>.ANumTitFr>.fr i{float: right;width: 1.625rem;height: 100%;margin: 0 1.375rem;display: flex;display: block;}
+.ANumTit>.ANumTitFr>.fr i img{width: 100%;margin: auto;}
+.ANumTit .ANumCont{width: 100%;padding: 1.875rem;overflow: hidden;display: none;}
+.ANumTit .ANumCont>div{width: 100%;border-radius: 20px;background-color: #F5F5F5;font-size: 1.75rem;overflow: hidden;padding: 1.875rem;padding-bottom: 0;}
+.ANumTit .ANumCont>div>div{width: 33.33%;float: left;height: 4.375rem;line-height: 4.375rem;margin-bottom: 1.75rem;}
+.ANumTit .ANumCont>div>div i{width: 4.375rem;height:100%;display: flex;margin-right: 2.125rem;float: left;}
+.ANumTit .ANumCont>div>div i img{width: 4.375rem;height: 4.375rem;margin: auto;border-radius: 50%;background-color: #B3B3B3;}
+.ANumTit.active>.ANumTitFr{border: 0 none;}
+
+
+
